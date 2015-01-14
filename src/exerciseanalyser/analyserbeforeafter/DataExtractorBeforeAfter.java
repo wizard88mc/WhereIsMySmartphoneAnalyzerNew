@@ -57,7 +57,8 @@ public class DataExtractorBeforeAfter
             boolean accelerometerNoGravity, boolean accelerometerNoGravityRotated, 
             boolean linear, boolean linearRotated, boolean rotation, boolean gravity, 
             boolean gyroscope, boolean magneticField, boolean ambientTemperature, 
-            boolean light, boolean pressure, boolean relativeHumidity)
+            boolean light, boolean pressure, boolean relativeHumidity, 
+            int numberFeatures)
     {
         
         String finalString = "";
@@ -121,11 +122,13 @@ public class DataExtractorBeforeAfter
                 features.addAll(exercise.getRelativeHumidityValues());
             }
             
-            String stringFeatures = featuresToString(features);
-            if (!stringFeatures.equals(""))
-            {
-                finalString += stringFeatures + " " + targetForOutput + System.getProperty("line.separator");
-            }   
+            if (features.size() == numberFeatures) {
+	            String stringFeatures = featuresToString(features);
+	            if (!stringFeatures.equals(""))
+	            {
+	                finalString += stringFeatures + " " + targetForOutput + System.getProperty("line.separator");
+	            }   
+            }
         }
  
         return finalString;

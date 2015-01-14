@@ -153,31 +153,29 @@ public class ExerciseAnalyserBeforeAfter
      * @param after features from buffer after
      */
     private void calculateAccelerometerNoGravityRatios(ExerciseAnalyser before, 
-            ExerciseAnalyser after)
-    {
+            ExerciseAnalyser after) {
+    	
         ArrayList<Float> featuresBefore = before.getAccelerometerNoGravityData().getFeatures(),
                 featuresAfter = after.getAccelerometerNoGravityData().getFeatures();
         ArrayList<String> featuresName = before.getAccelerometerNoGravityData().getFeaturesName();
         
-        for (int i = 0; i < featuresBefore.size(); i++)
-        {
+        for (int i = 0; i < featuresBefore.size(); i++) {
+        	
         	featuresAccelerometerNoGravityData.add("BEFORE_" + featuresName.get(i));
         	featuresAccelerometerNoGravityData.add("AFTER_" + featuresName.get(i));
             featuresAccelerometerNoGravityData.add("RATIO_" + featuresName.get(i));
             
             accelerometerNoGravityData.add(featuresBefore.get(i));
             accelerometerNoGravityData.add(featuresAfter.get(i));
-            if (featuresBefore.get(i) != null && featuresAfter.get(i) != null)
-            {
+            if (featuresBefore.get(i) != null && featuresAfter.get(i) != null) {
+            	
 	            Float ratio = featuresBefore.get(i) / featuresAfter.get(i);
-	            if (ratio.isInfinite() || ratio.isNaN())
-	            {
+	            if (ratio.isInfinite() || ratio.isNaN()) {
 	                ratio = 0.0F;
 	            }
 	            accelerometerNoGravityData.add(ratio);
             }
-            else
-            {
+            else {
                 accelerometerNoGravityData.add(null);
             }
         }
@@ -190,31 +188,28 @@ public class ExerciseAnalyserBeforeAfter
      * @param after features from buffer after
      */
     private void calculateAccelerometerNoGravityRotatedRatios(ExerciseAnalyser before, 
-            ExerciseAnalyser after)
-    {
+            ExerciseAnalyser after) {
+    	
         ArrayList<Float> featuresBefore = before.getAccelerometerNoGravityRotatedData().getFeatures(),
                 featuresAfter = after.getAccelerometerNoGravityRotatedData().getFeatures();
         ArrayList<String> featuresName = before.getAccelerometerNoGravityRotatedData().getFeaturesName();
         
-        for (int i = 0; i < featuresBefore.size(); i++)
-        {
+        for (int i = 0; i < featuresBefore.size(); i++) {
+        	
         	featuresAccelerometerNoGravityRotatedData.add("BEFORE_" + featuresName.get(i));
         	featuresAccelerometerNoGravityRotatedData.add("AFTER_" + featuresName.get(i));
             featuresAccelerometerNoGravityRotatedData.add("RATIO_" + featuresName.get(i));
             
             accelerometerNoGravityRotatedData.add(featuresBefore.get(i));
             accelerometerNoGravityRotatedData.add(featuresAfter.get(i));
-            if (featuresBefore.get(i) != null && featuresAfter.get(i) != null)
-            {
+            if (featuresBefore.get(i) != null && featuresAfter.get(i) != null) {
 	            Float ratio = featuresBefore.get(i) / featuresAfter.get(i);
-	            if (ratio.isInfinite() || ratio.isNaN())
-	            {
+	            if (ratio.isInfinite() || ratio.isNaN()) {
 	                ratio = 0.0F;
 	            }
 	            accelerometerNoGravityRotatedData.add(ratio);
             }
-            else
-            {
+            else {
                 accelerometerNoGravityRotatedData.add(null);
             }
         }
@@ -227,31 +222,29 @@ public class ExerciseAnalyserBeforeAfter
      * @param after features from buffer after
      */
     private void calculateLinearRatios(ExerciseAnalyser before, 
-            ExerciseAnalyser after)
-    {
+            ExerciseAnalyser after) {
+    	
         ArrayList<Float> featuresBefore = before.getLinearData().getFeatures(),
                 featuresAfter = after.getLinearData().getFeatures();
         ArrayList<String> featuresName = before.getLinearData().getFeaturesName();
         
-        for (int i = 0; i < featuresBefore.size(); i++)
-        {
+        for (int i = 0; i < featuresBefore.size(); i++) {
+        	
         	featuresLinearData.add("BEFORE_" + featuresName.get(i));
         	featuresLinearData.add("AFTER_" + featuresName.get(i));
             featuresLinearData.add("RATIO_" + featuresName.get(i));
             
             linearData.add(featuresBefore.get(i)); 
             linearData.add(featuresAfter.get(i));
-            if (featuresBefore.get(i) != null && featuresAfter.get(i) != null)
-            {
+            if (featuresBefore.get(i) != null && featuresAfter.get(i) != null) {
+            	
                 Float ratio = featuresBefore.get(i) / featuresAfter.get(i);
-                if (ratio.isInfinite() || ratio.isNaN())
-                {
+                if (ratio.isInfinite() || ratio.isNaN()) {
                     ratio = 0.0F;
                 }
                 linearData.add(ratio);
             }
-            else
-            {
+            else {
                 linearData.add(null);
             }
         }
@@ -264,31 +257,29 @@ public class ExerciseAnalyserBeforeAfter
      * @param after features from buffer after
      */
     private void calculateLinearRotatedRatios(ExerciseAnalyser before, 
-            ExerciseAnalyser after)
-    {
+            ExerciseAnalyser after) {
+    	
         ArrayList<Float> featuresBefore = before.getLinearRotatedData().getFeatures(),
                 featuresAfter = after.getLinearRotatedData().getFeatures();
         ArrayList<String> featuresName = before.getLinearRotatedData().getFeaturesName();
         
-        for (int i = 0; i < featuresBefore.size(); i++)
-        {
+        for (int i = 0; i < featuresBefore.size(); i++) {
+        	
         	featuresLinearRotatedData.add("BEFORE_" + featuresName.get(i));
         	featuresLinearRotatedData.add("AFTER_" + featuresName.get(i));
             featuresLinearRotatedData.add("RATIO_" + featuresName.get(i));
             
             linearRotatedData.add(featuresBefore.get(i));
             linearRotatedData.add(featuresAfter.get(i));
-            if (featuresBefore.get(i) != null && featuresAfter.get(i) != null)
-            {
+            if (featuresBefore.get(i) != null && featuresAfter.get(i) != null) {
+            	
 	            Float ratio = featuresBefore.get(i) / featuresAfter.get(i);
-	            if (ratio.isInfinite() || ratio.isNaN())
-	            {
+	            if (ratio.isInfinite() || ratio.isNaN()) {
 	                ratio = 0F;
 	            }
 	            linearRotatedData.add(ratio);
             }
-            else
-            {
+            else {
                 linearRotatedData.add(null);
             }
         }
@@ -301,14 +292,13 @@ public class ExerciseAnalyserBeforeAfter
      * @param after features from buffer after
      */
     private void calculateRotationRatios(ExerciseAnalyser before, 
-            ExerciseAnalyser after)
-    {
+            ExerciseAnalyser after) {
+    	
         ArrayList<Float> featuresBefore = before.getRotationData().getFeatures(),
                 featuresAfter = after.getRotationData().getFeatures();
         ArrayList<String> featuresName = before.getRotationData().getFeaturesName();
         
-        for (int i = 0; i < featuresBefore.size(); i++)
-        {
+        for (int i = 0; i < featuresBefore.size(); i++) {
             
         	featuresRotationData.add("BEFORE_" + featuresName.get(i));
         	featuresRotationData.add("AFTER_" + featuresName.get(i));
@@ -319,14 +309,12 @@ public class ExerciseAnalyserBeforeAfter
             if (featuresBefore.get(i) != null && featuresAfter.get(i) != null) {
             	
 	            Float ratio = featuresBefore.get(i) / featuresAfter.get(i);
-	            if (ratio.isInfinite() || ratio.isNaN())
-	            {
+	            if (ratio.isInfinite() || ratio.isNaN()) {
 	                ratio = 0.0F;
 	            }
 	            rotationData.add(ratio);
             }
-            else
-            {
+            else {
                 rotationData.add(null);
             }
             
@@ -340,14 +328,14 @@ public class ExerciseAnalyserBeforeAfter
      * @param after features from buffer after
      */
     private void calculateGravityRatios(ExerciseAnalyser before, 
-            ExerciseAnalyser after)
-    {
+            ExerciseAnalyser after) {
+    	
         ArrayList<Float> featuresBefore = before.getGravityData().getFeatures(),
                 featuresAfter = after.getGravityData().getFeatures();
         ArrayList<String> featuresName = before.getGravityData().getFeaturesName();
         
-        for (int i = 0; i < featuresBefore.size(); i++)
-        {
+        for (int i = 0; i < featuresBefore.size(); i++) {
+        	
             featuresGravityData.add("BEFORE_" + featuresName.get(i));
             featuresGravityData.add("AFTER_" + featuresName.get(i));
             featuresGravityData.add("RATIO_" + featuresName.get(i));
@@ -357,14 +345,12 @@ public class ExerciseAnalyserBeforeAfter
             if (featuresBefore.get(i) != null && featuresAfter.get(i) != null) {
             	
 	            Float ratio = featuresBefore.get(i) / featuresAfter.get(i);
-	            if (ratio.isInfinite() || ratio.isNaN())
-	            {
+	            if (ratio.isInfinite() || ratio.isNaN()) {
 	                ratio = 0F;
 	            }
 	            gravityData.add(ratio);
             }
-            else
-            {
+            else {
                 gravityData.add(null);
             }
             
@@ -378,8 +364,8 @@ public class ExerciseAnalyserBeforeAfter
      * @param after features from buffer after
      */
     private void calculateGyroscopeRatios(ExerciseAnalyser before, 
-            ExerciseAnalyser after)
-    {
+            ExerciseAnalyser after) {
+    	
         ArrayList<Float> featuresBefore = before.getGyroscopeData().getFeatures(),
                 featuresAfter = after.getGyroscopeData().getFeatures();
         ArrayList<String> featuresName = before.getGyroscopeData().getFeaturesName();
@@ -394,14 +380,12 @@ public class ExerciseAnalyserBeforeAfter
             gyroscopeData.add(featuresAfter.get(i));
             if (featuresBefore.get(i) != null && featuresAfter.get(i) != null) {
                 Float ratio = featuresBefore.get(i) / featuresAfter.get(i);
-                if (ratio.isInfinite() || ratio.isNaN())
-                {
+                if (ratio.isInfinite() || ratio.isNaN()) {
                     ratio = 0F;
                 }
                 gyroscopeData.add(ratio);
             }
-            else
-            {
+            else {
                 gyroscopeData.add(null);
             }
         }
@@ -414,8 +398,8 @@ public class ExerciseAnalyserBeforeAfter
      * @param after features from buffer after
      */
     private void calculateMagneticFieldRatios(ExerciseAnalyser before, 
-            ExerciseAnalyser after)
-    {
+            ExerciseAnalyser after) {
+    	
         ArrayList<Float> featuresBefore = before.getMagneticFieldData().getFeatures(),
                 featuresAfter = after.getMagneticFieldData().getFeatures();
         ArrayList<String> featuresName = before.getMagneticFieldData().getFeaturesName();
@@ -431,14 +415,12 @@ public class ExerciseAnalyserBeforeAfter
             if (featuresBefore.get(i) != null && featuresAfter.get(i) != null) {
             	
                 Float ratio = featuresBefore.get(i) / featuresAfter.get(i);
-                if (ratio.isInfinite() || ratio.isNaN())
-                {
+                if (ratio.isInfinite() || ratio.isNaN()) {
                     ratio = 0.0F;
                 }
                 magneticFieldData.add(ratio);
             }
-            else
-            {
+            else {
                 magneticFieldData.add(null);
             }    
         }
@@ -494,31 +476,26 @@ public class ExerciseAnalyserBeforeAfter
                 featuresAfter = after.getLightData().getFeatures();
         ArrayList<String> featuresName = before.getLightData().getFeaturesName();
         
-        for (int i = 0; i < featuresBefore.size(); i++)
-        {
-            if (featuresBefore.get(i) != null && !featuresBefore.get(i).isInfinite() && 
-                    !featuresBefore.get(i).isNaN() && featuresAfter.get(i) != null && 
-                    !featuresAfter.get(i).isInfinite() && !featuresAfter.get(i).isNaN())
-            {
-            	featuresLightData.add("BEFORE_" + featuresName.get(i));
-            	featuresLightData.add("AFTER_" + featuresName.get(i));
-                featuresLightData.add("RATIO_" + featuresName.get(i));
-                
-                lightData.add(featuresBefore.get(i));
-                lightData.add(featuresAfter.get(i));
-                if (featuresBefore.get(i) != null && featuresAfter.get(i) != null) {
-                	
-	                Float ratio = featuresBefore.get(i) / featuresAfter.get(i);
-	                if (ratio.isInfinite() || ratio.isNaN())
-	                {
-	                    ratio = 0.0F;
-	                }
-	                lightData.add(ratio);
-                }
-                else
+        for (int i = 0; i < featuresBefore.size(); i++) {
+            
+        	featuresLightData.add("BEFORE_" + featuresName.get(i));
+        	featuresLightData.add("AFTER_" + featuresName.get(i));
+            featuresLightData.add("RATIO_" + featuresName.get(i));
+            
+            lightData.add(featuresBefore.get(i));
+            lightData.add(featuresAfter.get(i));
+            if (featuresBefore.get(i) != null && featuresAfter.get(i) != null) {
+            	
+                Float ratio = featuresBefore.get(i) / featuresAfter.get(i);
+                if (ratio.isInfinite() || ratio.isNaN())
                 {
-                    lightData.add(null);
+                    ratio = 0.0F;
                 }
+                lightData.add(ratio);
+            }
+            else
+            {
+                lightData.add(null);
             }
         }
     }
@@ -536,32 +513,27 @@ public class ExerciseAnalyserBeforeAfter
                 featuresAfter = after.getPressureData().getFeatures();
         ArrayList<String> featuresName = before.getPressureData().getFeaturesName();
         
-        for (int i = 0; i < featuresBefore.size(); i++)
-        {
-            if (featuresBefore.get(i) != null && !featuresBefore.get(i).isInfinite() && 
-                    !featuresBefore.get(i).isNaN() && featuresAfter.get(i) != null && 
-                    !featuresAfter.get(i).isInfinite() && !featuresAfter.get(i).isNaN()) {
+        for (int i = 0; i < featuresBefore.size(); i++) {
             	
-            	featuresPressureData.add("BEFORE_" + featuresName.get(i));
-            	featuresPressureData.add("AFTER_" + featuresName.get(i));
-                featuresPressureData.add("RATIO_" + featuresName.get(i));
-                
-                pressureData.add(featuresBefore.get(i));
-                pressureData.add(featuresAfter.get(i));
-                
-                if (featuresBefore.get(i) != null && featuresAfter.get(i) != null) {
-                	
-	                Float ratio = featuresBefore.get(i) / featuresAfter.get(i);
-	                if (ratio.isInfinite() || ratio.isNaN())
-	                {
-	                    ratio = 0.0F;
-	                }
-	                pressureData.add(ratio);
-                }
-                else
+        	featuresPressureData.add("BEFORE_" + featuresName.get(i));
+        	featuresPressureData.add("AFTER_" + featuresName.get(i));
+            featuresPressureData.add("RATIO_" + featuresName.get(i));
+            
+            pressureData.add(featuresBefore.get(i));
+            pressureData.add(featuresAfter.get(i));
+            
+            if (featuresBefore.get(i) != null && featuresAfter.get(i) != null) {
+            	
+                Float ratio = featuresBefore.get(i) / featuresAfter.get(i);
+                if (ratio.isInfinite() || ratio.isNaN())
                 {
-                    pressureData.add(null);
+                    ratio = 0.0F;
                 }
+                pressureData.add(ratio);
+            }
+            else
+            {
+                pressureData.add(null);
             }
         }
     }
@@ -579,31 +551,26 @@ public class ExerciseAnalyserBeforeAfter
                 featuresAfter = after.getRelativeHumidityData().getFeatures();
         ArrayList<String> featuresName = before.getRelativeHumidityData().getFeaturesName();
         
-        for (int i = 0; i < featuresBefore.size(); i++)
-        {
-            if (featuresBefore.get(i) != null && !featuresBefore.get(i).isInfinite() && 
-                    !featuresBefore.get(i).isNaN() && featuresAfter.get(i) != null && 
-                    !featuresAfter.get(i).isInfinite() && !featuresAfter.get(i).isNaN()) {
+        for (int i = 0; i < featuresBefore.size(); i++) {
+           	
+        	featuresRelativeHumidity.add("BEFORE_" + featuresName.get(i));
+        	featuresRelativeHumidity.add("AFTER_" + featuresName.get(i));
+            featuresRelativeHumidity.add("RATIO_" + featuresName.get(i));
+            
+            relativeHumidityData.add(featuresBefore.get(i));
+            relativeHumidityData.add(featuresAfter.get(i));
+            if (featuresBefore.get(i) != null && featuresAfter.get(i) != null) {
             	
-            	featuresRelativeHumidity.add("BEFORE_" + featuresName.get(i));
-            	featuresRelativeHumidity.add("AFTER_" + featuresName.get(i));
-                featuresRelativeHumidity.add("RATIO_" + featuresName.get(i));
-                
-                relativeHumidityData.add(featuresBefore.get(i));
-                relativeHumidityData.add(featuresAfter.get(i));
-                if (featuresBefore.get(i) != null && featuresAfter.get(i) != null) {
-                	
-	                Float ratio = featuresBefore.get(i) / featuresAfter.get(i);
-	                if (ratio.isInfinite() || ratio.isNaN())
-	                {
-	                    ratio = 0.0F;
-	                }
-	                relativeHumidityData.add(ratio);
-                }
-                else
+                Float ratio = featuresBefore.get(i) / featuresAfter.get(i);
+                if (ratio.isInfinite() || ratio.isNaN())
                 {
-                    relativeHumidityData.add(null);
+                    ratio = 0.0F;
                 }
+                relativeHumidityData.add(ratio);
+            }
+            else
+            {
+                relativeHumidityData.add(null);
             }
         }
     }

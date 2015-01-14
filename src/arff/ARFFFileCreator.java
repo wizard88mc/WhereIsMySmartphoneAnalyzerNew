@@ -244,19 +244,31 @@ public class ARFFFileCreator
             
             BufferedWriter writer = new BufferedWriter(new FileWriter(outputFile));
             writer.write(PROLOGUE);
-            writer.write(listDataExtractor.get(0)
+            String featuresListForARFFString = listDataExtractor.get(0)
                     .buildFeaturesListForARFF(yesNo[0], yesNo[1], yesNo[2], 
-                yesNo[3], yesNo[4], yesNo[5], yesNo[6], yesNo[7], yesNo[8], 
-                yesNo[9], yesNo[10], yesNo[11], yesNo[12], yesNo[13]));
+                    		yesNo[3], yesNo[4], yesNo[5], yesNo[6], yesNo[7], yesNo[8], 
+                    		yesNo[9], yesNo[10], yesNo[11], yesNo[12], yesNo[13]);
+            writer.write(featuresListForARFFString);
         
             writer.write(classes);
             writer.write(data);
+            
+            int numberFeatures = 0, lastIndex = 0;
+            
+            while (lastIndex != -1) {
+            	lastIndex = featuresListForARFFString.indexOf("@ATTRIBUTE", lastIndex);
+            	if (lastIndex != -1) {
+            		numberFeatures++;
+            		lastIndex += "@ATTRIBUTE".length();
+            	}
+            }
             
             for (DataExtractorBeforeAfter extractor: listDataExtractor)
             {
                 writer.write(extractor.dataForAllExercises(yesNo[0], yesNo[1], yesNo[2], 
                 yesNo[3], yesNo[4], yesNo[5], yesNo[6], yesNo[7], yesNo[8], 
-                yesNo[9], yesNo[10], yesNo[11], yesNo[12], yesNo[13]));
+                yesNo[9], yesNo[10], yesNo[11], yesNo[12], yesNo[13], 
+                numberFeatures));
             }
             
             writer.flush(); writer.close();
